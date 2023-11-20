@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import StrMethodFormatter
 import math
-
+#asignamos los datos
 x1=12
 x2=61
 y1=30
@@ -15,21 +15,21 @@ velEnDiamante=velLuz/ndiamante
 angulo1=[]
 angulo2=[]
 tiempo=[]
-
+#ES PARA EL TIEMPO y el angulo 1 y angulo 2 es para unas funciones del seno
 for x in range (70):
     t=((math.sqrt(pow(x1-x,2)+pow(y1,2))/velLuz)+(math.sqrt(pow(x2-x,2)+pow(y2,2))/velEnDiamante))
-    angulo1.append(abs(math.degrees(math.atan((x1-x)/y1))))
-    angulo2.append(abs(math.degrees(math.atan((x2-x)/y2))))   
+    angulo1.append(abs((math.atan((x1-x)/y1))))
+    angulo2.append(abs((math.atan((x2-x)/y2))))   
     tiempo.append(t)
 
 
 #SNELL: n1 sen1 = n2 sen 2
 for i in range(70):
     if(tiempo[i]==min(tiempo)):
-        print(f'angulo 1: {angulo1[i]}')
-        print(f'angulo 2: {angulo2[i]}')
+        print(f'angulo 1: {math.degrees(angulo1[i])}')
+        print(f'angulo 2: {math.degrees(angulo2[i])}')
         print(f'tiempo minimo: {tiempo[i]}')
-        print(f'sin/sin: {math.sin(angulo1[i])/math.sin(angulo2[i])}')
+        print(f'sin/sin: {(math.sin(angulo1[i])/math.sin(angulo2[i]))}')
 
 x=range(70)
 
